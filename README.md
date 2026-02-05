@@ -4,6 +4,17 @@ Embed the Codex agent in your workflows and apps.
 
 The Python SDK wraps the bundled `codex` binary. It spawns the CLI and exchanges JSONL events over stdin/stdout.
 
+## TypeScript版との互換性
+
+このPython SDKは [TypeScript版 Codex SDK](https://github.com/openai/codex/tree/main/sdk/typescript) を1対1でポーティングしており、**全ての機能・データ構造・動作が同一**です。
+
+- 全8種のイベント型（ThreadStartedEvent, TurnCompletedEvent など）
+- 全8種のアイテム型（AgentMessageItem, CommandExecutionItem など）
+- 全4種のEnum（ApprovalMode, SandboxMode, ModelReasoningEffort, WebSearchMode）
+- CLI引数の構築ロジック、環境変数の処理、TOML設定シリアライズ
+
+詳細な比較は [docs/typescript-python-comparison.md](docs/typescript-python-comparison.md) を参照してください。
+
 ## Installation
 
 ```bash
