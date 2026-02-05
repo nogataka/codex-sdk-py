@@ -37,10 +37,10 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/nogataka/codex-sdk-python"
-Documentation = "https://github.com/nogataka/codex-sdk-python#readme"
-Repository = "https://github.com/nogataka/codex-sdk-python"
-Issues = "https://github.com/nogataka/codex-sdk-python/issues"
+Homepage = "https://github.com/nogataka/codex-sdk-py"
+Documentation = "https://github.com/nogataka/codex-sdk-py#readme"
+Repository = "https://github.com/nogataka/codex-sdk-py"
+Issues = "https://github.com/nogataka/codex-sdk-py/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["codex_sdk"]
