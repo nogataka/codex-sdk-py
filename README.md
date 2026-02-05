@@ -317,6 +317,77 @@ class WebSearchMode(StrEnum):
     LIVE = "live"
 ```
 
+## Development
+
+### Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/openai/codex.git
+cd codex/sdk/python
+
+# Install development dependencies
+pip install -e ".[dev]"
+```
+
+### Running tests
+
+```bash
+pytest tests/ -v
+```
+
+### Linting and formatting
+
+```bash
+# Lint
+ruff check codex_sdk/
+
+# Format
+ruff format codex_sdk/
+
+# Type check
+mypy codex_sdk/
+```
+
+## Release Process
+
+Releases are automated via GitHub Actions.
+
+### Creating a release
+
+1. Update the version in `codex_sdk/__init__.py`:
+   ```python
+   __version__ = "0.1.0"
+   ```
+
+2. Commit the version change:
+   ```bash
+   git add codex_sdk/__init__.py
+   git commit -m "Bump version to 0.1.0"
+   ```
+
+3. Create and push a tag:
+   ```bash
+   git tag v0.1.0
+   git push origin main --tags
+   ```
+
+4. GitHub Actions will automatically:
+   - Build the package
+   - Publish to PyPI
+   - Create a GitHub Release
+
+### Required secrets
+
+Set the following secrets in your GitHub repository:
+
+- `PYPI_TOKEN`: Your PyPI API token for publishing packages
+
+To create a PyPI token:
+1. Go to https://pypi.org/manage/account/token/
+2. Create a new token with "Upload packages" scope
+3. Add it to your GitHub repository secrets
+
 ## License
 
 Apache-2.0

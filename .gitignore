@@ -103,3 +103,5 @@ Thumbs.db
 codex_sdk/vendor/
 
 .claude/
+
+docs/private/
