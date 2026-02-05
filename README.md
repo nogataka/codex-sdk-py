@@ -7,7 +7,7 @@ The Python SDK wraps the bundled `codex` binary. It spawns the CLI and exchanges
 ## Installation
 
 ```bash
-pip install codex-sdk
+pip install codex-sdk-python
 ```
 
 Requires Python 3.10+.
