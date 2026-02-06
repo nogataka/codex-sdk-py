@@ -381,7 +381,7 @@ def _find_codex_path() -> str:
     if not target_triple:
         raise RuntimeError(f"Unsupported platform: {system} ({machine})")
 
-    # Return bundled binary path (matches TypeScript behavior)
+    # Try bundled binary first
     script_dir = Path(__file__).parent
     vendor_root = script_dir / "vendor"
     arch_root = vendor_root / target_triple
@@ -389,4 +389,8 @@ def _find_codex_path() -> str:
     binary_name = "codex.exe" if sys.platform == "win32" else "codex"
     binary_path = arch_root / "codex" / binary_name
 
-    return str(binary_path)
+    if binary_path.exists():
+        return str(binary_path)
+
+    # Fall back to PATH (for when binary is not bundled, e.g., PyPI install)
+    return "codex"

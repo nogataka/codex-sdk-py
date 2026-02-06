@@ -160,6 +160,16 @@ Python版 SDK は TypeScript版 SDK を1対1でポーティングしており、
 | エラー型 | `Error` | `RuntimeError` / `ValueError` | 言語標準 |
 | Enum実装 | 文字列リテラルUnion | `StrEnum` | 型システムの違い |
 
+## パッケージング方式の違い
+
+| 項目 | TypeScript (npm) | Python (PyPI) |
+|------|------------------|---------------|
+| バイナリバンドル | `vendor/` にCodexバイナリを同梱 | バイナリは同梱しない |
+| バイナリ検索 | バンドルパスのみ | バンドルパス → PATHにフォールバック |
+
+Python版では、バンドルされたバイナリが存在しない場合、システムのPATHから `codex` コマンドを検索します。
+これにより、ユーザーが別途インストールしたCodex CLIを使用できます。
+
 ## 結論
 
 Python版 Codex SDK は TypeScript版と**完全に同一の仕様**を実装しています。
