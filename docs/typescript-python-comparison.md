@@ -112,7 +112,7 @@ Python版 SDK は TypeScript版 SDK を1対1でポーティングしており、
 
 | 引数 | 状態 |
 |------|------|
-| `exec --experimental-json` | ✅ 一致 |
+| `exec --json` | ✅ 一致 |
 | `--model` | ✅ 一致 |
 | `--sandbox` | ✅ 一致 |
 | `--cd` | ✅ 一致 |

@@ -181,7 +181,7 @@ class CodexExec:
 
     def _build_command_args(self, args: CodexExecArgs) -> list[str]:
         """Build command line arguments for the CLI."""
-        command_args: list[str] = ["exec", "--experimental-json"]
+        command_args: list[str] = ["exec", "--json"]
 
         # Add config overrides
         if self._config_overrides:
